@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Libro</title>
+</head>
+<body>
+    <script>
+        // Definir el objeto libro
+        const libro = {
+            titulo: "Cien años de soledad",
+            autor: "Gabriel García Márquez",
+            fechaPublicacion: "1967"
+        };
+
+        // Mostrar el objeto libro en la consola
+        console.log("Libro:", libro);
+
+        // Mostrar la información del libro en el navegador
+        document.write("<h2>Datos del Libro</h2>");
+        document.write("<p><strong>Título:</strong> " + libro.titulo + "</p>");
+        document.write("<p><strong>Autor:</strong> " + libro.autor + "</p>");
+        document.write("<p><strong>Fecha de Publicación:</strong> " + libro.fechaPublicacion + "</p>");
+    </script>
+</body>
+</html>

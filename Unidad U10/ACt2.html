@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Número de Teléfono</title>
+    <script>
+        function validarTelefono() {
+            var telefono = document.getElementById("telefono").value;
+            var regex = /^[0-9]{10}$/;
+            var resultado = document.getElementById("resultado");
+
+            if (regex.test(telefono)) {
+                resultado.textContent = "Número de teléfono válido";
+                resultado.style.color = "green";
+            } else {
+                resultado.textContent = "Número de teléfono no válido. Debe tener 10 dígitos.";
+                resultado.style.color = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Formulario de Validación de Número de Teléfono</h2>
+    <label for="telefono">Introduce tu número de teléfono (10 dígitos):</label>
+    <input type="text" id="telefono" name="telefono">
+    <button onclick="validarTelefono()">Validar</button>
+    <p id="resultado"></p>
+</body>
+</html>

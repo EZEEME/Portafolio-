@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Nombre Completo</title>
+</head>
+<body>
+    <script>
+        // Definir el objeto usuario
+        const usuario = {
+            nombre: "Juan",
+            apellidoPaterno: "Pérez",
+            apellidoMaterno: "Gómez"
+        };
+
+        // Crear la cadena con el nombre completo
+        const nombreCompleto = usuario.nombre + " " + usuario.apellidoPaterno + " " + usuario.apellidoMaterno;
+
+        // Mostrar el nombre completo en la consola
+        console.log("Nombre completo:", nombreCompleto);
+
+        // Mostrar el nombre completo en el navegador
+        document.write("<h2>Nombre Completo del Usuario</h2>");
+        document.write("<p><strong>Nombre:</strong> " + nombreCompleto + "</p>");
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reemplazo de Palabra</title>
+    <script>
+        function reemplazarPalabra() {
+            var frase = document.getElementById("frase").value;
+            var buscar = document.getElementById("buscar").value;
+            var reemplazar = document.getElementById("reemplazar").value;
+            
+            // Reemplazar todas las ocurrencias de la palabra de búsqueda por el patrón de reemplazo
+            var nuevaFrase = frase.replace(new RegExp(buscar, 'g'), reemplazar);
+            
+            // Mostrar la nueva frase con el reemplazo
+            document.getElementById("resultado").innerHTML = "Frase modificada: " + nuevaFrase;
+        }
+    </script>
+</head>
+<body>
+    <h1>Reemplazar Palabra en una Frase</h1>
+    
+    <label for="frase">Ingresa una frase:</label>
+    <input type="text" id="frase" placeholder="Escribe una frase" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit" required><br><br>
+    
+    <label for="buscar">Ingresa el conjunto de caracteres a buscar:</label>
+    <input type="text" id="buscar" placeholder="Palabra a buscar" value="ipsum" required><br><br>
+    
+    <label for="reemplazar">Ingresa el patrón de reemplazo:</label>
+    <input type="text" id="reemplazar" placeholder="Palabra de reemplazo" value="dolor" required><br><br>
+    
+    <button onclick="reemplazarPalabra()">Reemplazar</button>
+    
+    <p id="resultado"></p>
+</body>
+</html>

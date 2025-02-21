@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Palabra</title>
+    <script>
+        function contarPalabra() {
+            var frase = document.getElementById("frase").value;
+            var palabra = document.getElementById("palabra").value;
+            
+            // Convertir la frase y la palabra a minúsculas para hacer la búsqueda insensible a mayúsculas
+            frase = frase.toLowerCase();
+            palabra = palabra.toLowerCase();
+            
+            // Dividir la frase en palabras y contar las apariciones de la palabra
+            var palabras = frase.split(" ");
+            var conteo = 0;
+
+            // Contamos las veces que aparece la palabra en el arreglo de palabras
+            for (var i = 0; i < palabras.length; i++) {
+                if (palabras[i] === palabra) {
+                    conteo++;
+                }
+            }
+            
+            // Mostrar el resultado
+            document.getElementById("resultado").innerHTML = 
+                'La palabra "' + palabra + '" aparece ' + conteo + ' veces en la frase.';
+        }
+    </script>
+</head>
+<body>
+    <h1>Contar Palabra en una Frase</h1>
+    
+    <label for="frase">Ingresa una frase:</label>
+    <input type="text" id="frase" placeholder="Escribe una frase" required><br><br>
+    
+    <label for="palabra">Ingresa la palabra a buscar:</label>
+    <input type="text" id="palabra" placeholder="Escribe una palabra" required><br><br>
+    
+    <button onclick="contarPalabra()">Contar palabra</button>
+    
+    <p id="resultado"></p>
+</body>
+</html>

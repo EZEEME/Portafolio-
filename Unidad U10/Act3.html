@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de Palabras</title>
+    <script>
+        function contarPalabra() {
+            var frase = document.getElementById("frase").value;
+            var palabra = "ejemplo";
+            var regex = new RegExp("\\b" + palabra + "\\b", "gi"); // 'gi' para hacerlo insensible a mayúsculas y minúsculas
+            var resultado = document.getElementById("resultado");
+            
+            var coincidencias = frase.match(regex); // Devuelve un array con las coincidencias
+            var cantidad = coincidencias ? coincidencias.length : 0; // Si no hay coincidencias, el resultado es 0
+
+            resultado.textContent = "La palabra '" + palabra + "' aparece " + cantidad + " veces.";
+        }
+    </script>
+</head>
+<body>
+    <h2>Contador de Palabra en una Frase</h2>
+    <label for="frase">Introduce una frase:</label>
+    <input type="text" id="frase" name="frase" placeholder="Ejemplo: Este es un ejemplo de texto con ejemplo de palabra repetida">
+    <button onclick="contarPalabra()">Contar Palabra</button>
+    <p id="resultado"></p>
+</body>
+</html>

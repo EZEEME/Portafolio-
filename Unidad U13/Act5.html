@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mostrar Elemento al Hacer Clic</title>
+  <script>
+    // Función para mostrar el elemento
+    function mostrarElemento() {
+      // Seleccionar el elemento por su ID
+      const elemento = document.getElementById('elementoMostrar');
+      
+      // Cambiar el estilo para mostrar el elemento
+      elemento.style.display = 'block';
+    }
+  </script>
+</head>
+<body>
+  <h1>Mostrar Elemento al Hacer Clic</h1>
+  
+  <!-- Elemento que estará oculto inicialmente -->
+  <div id="elementoMostrar" style="display: none; border: 1px solid #000; padding: 20px;">
+    ¡Este elemento ahora es visible!
+  </div>
+
+  <!-- Botón para ejecutar la función -->
+  <button onclick="mostrarElemento()">Mostrar Elemento</button>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extraer Números</title>
+    <script>
+        function extraerNumeros() {
+            var cadena = document.getElementById("cadena").value;
+            
+            // Expresión regular para extraer todos los números en la cadena
+            var regex = /\d+/g;
+            
+            // Encontrar todos los números en la cadena
+            var numeros = cadena.match(regex);
+            
+            // Si encontramos números, los mostramos, de lo contrario, mostramos un mensaje
+            if (numeros) {
+                document.getElementById("resultado").innerHTML = "Números encontrados: " + numeros.join(", ");
+            } else {
+                document.getElementById("resultado").innerHTML = "No se encontraron números en la cadena.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Extraer Números de una Cadena</h1>
+    
+    <label for="cadena">Ingresa una cadena de texto:</label>
+    <input type="text" id="cadena" placeholder="Escribe una cadena" required><br><br>
+    
+    <button onclick="extraerNumeros()">Extraer Números</button>
+    
+    <p id="resultado"></p>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Teléfono</title>
+    <script>
+        function validarTelefono() {
+            var telefono = document.getElementById("telefono").value;
+            
+            // Verificar si tiene 10 caracteres y si todos son números
+            if (telefono.length === 10 && !isNaN(telefono)) {
+                // Verificar si el primer dígito es válido (por ejemplo, 2, 3, 4 o 5)
+                if (telefono[0] === '2' || telefono[0] === '3' || telefono[0] === '4' || telefono[0] === '5') {
+                    alert("Número de teléfono válido");
+                } else {
+                    alert("Número de teléfono inválido (primer dígito no válido)");
+                }
+            } else {
+                alert("Número de teléfono inválido (debe tener 10 dígitos y solo números)");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Formulario de Validación de Teléfono</h1>
+    <form onsubmit="event.preventDefault(); validarTelefono();">
+        <label for="telefono">Ingresa tu número de teléfono (10 dígitos):</label>
+        <input type="text" id="telefono" name="telefono" maxlength="10" required>
+        <button type="submit">Validar</button>
+    </form>
+</body>
+</html>

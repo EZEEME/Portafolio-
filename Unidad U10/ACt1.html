@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Correo Electrónico</title>
+    <script>
+        function validarCorreo() {
+            var correo = document.getElementById("email").value;
+            var regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            var resultado = document.getElementById("resultado");
+
+            if (regex.test(correo)) {
+                resultado.textContent = "Correo electrónico válido";
+                resultado.style.color = "green";
+            } else {
+                resultado.textContent = "Correo electrónico no válido";
+                resultado.style.color = "red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Formulario de Validación de Correo Electrónico</h2>
+    <label for="email">Introduce tu correo electrónico:</label>
+    <input type="text" id="email" name="email">
+    <button onclick="validarCorreo()">Validar</button>
+    <p id="resultado"></p>
+</body>
+</html>

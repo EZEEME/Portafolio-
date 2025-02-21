@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extraer Números de una Cadena</title>
+    <script>
+        function extraerNumeros() {
+            var texto = document.getElementById("texto").value;
+            var regex = /\d+/g; // Busca uno o más dígitos
+            var resultado = document.getElementById("resultado");
+
+            var numeros = texto.match(regex); // Extrae los números encontrados
+
+            if (numeros) {
+                resultado.textContent = "Números encontrados: " + numeros.join(", ");
+            } else {
+                resultado.textContent = "No se encontraron números.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Extraer Números de una Cadena</h2>
+    <label for="texto">Introduce una cadena de texto:</label>
+    <input type="text" id="texto" name="texto" placeholder="Ejemplo: Tengo 2 manzanas y 5 plátanos">
+    <button onclick="extraerNumeros()">Extraer Números</button>
+    <p id="resultado"></p>
+</body>
+</html>

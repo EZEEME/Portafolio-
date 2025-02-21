@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cambiar Atributo de un Elemento</title>
+  <script>
+    // Función para cambiar el atributo de la imagen
+    function cambiarAtributo() {
+      // Seleccionar el elemento por su ID
+      const imagen = document.getElementById('imagenCambio');
+      
+      // Cambiar el atributo src usando setAttribute
+      imagen.setAttribute('src', 'https://via.placeholder.com/300x200?text=Nueva+Imagen');
+      
+      // Cambiar el atributo alt
+      imagen.setAttribute('alt', 'Imagen actualizada');
+    }
+  </script>
+</head>
+<body>
+  <h1>Cambiar Atributo de un Elemento</h1>
+  
+  <!-- Imagen con un atributo que se cambiará -->
+  <img id="imagenCambio" src="https://via.placeholder.com/300x200?text=Imagen+Original" alt="Imagen original" style="border: 1px solid #000;">
+
+  <!-- Botón para ejecutar la función -->
+  <button onclick="cambiarAtributo()">Cambiar Imagen</button>
+</body>
+</html>

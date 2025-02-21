@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar Fecha Actual</title>
+</head>
+<body>
+    <script>
+        // Obtener la fecha actual
+        const date = new Date().toLocaleDateString();
+
+        // Mostrar la fecha en la consola
+        console.log("Fecha Actual:", date);
+
+        // Mostrar la fecha en el navegador
+        document.write("<h2>Fecha Actual</h2>");
+        document.write("<p><strong>Hoy es:</strong> " + date + "</p>");
+    </script>
+</body>
+</html>

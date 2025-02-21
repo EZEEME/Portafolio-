@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Números Aleatorios</title>
+    <script>
+        function generarNumeroAleatorio() {
+            return Math.floor(Math.random() * 100) + 1;
+        }
+
+        function mostrarNumero() {
+            let numero = generarNumeroAleatorio();
+            document.getElementById("resultado").textContent = "Número generado: " + numero;
+        }
+    </script>
+</head>
+<body>
+    <h1>Lotería Nacional - Número Aleatorio</h1>
+    <button onclick="mostrarNumero()">Generar Número</button>
+    <p id="resultado">Presiona el botón para generar un número.</p>
+</body>
+</html>

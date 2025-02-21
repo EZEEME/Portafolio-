@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ocultar Elemento al Hacer Clic</title>
+  <script>
+    // Función para ocultar el elemento
+    function ocultarElemento() {
+      // Seleccionar el elemento por su ID
+      const elemento = document.getElementById('elementoOculto');
+      
+      // Cambiar el estilo para ocultar el elemento
+      elemento.style.display = 'none';
+    }
+  </script>
+</head>
+<body>
+  <h1>Reto: Ocultar Elemento al Hacer Clic</h1>
+  
+  <!-- Elemento que se ocultará -->
+  <div id="elementoOculto" style="border: 1px solid #000; padding: 20px;">
+    Este elemento desaparecerá al hacer clic en el botón.
+  </div>
+
+  <!-- Botón para ejecutar la función -->
+  <button onclick="ocultarElemento()">Ocultar Elemento</button>
+</body>
+</html>

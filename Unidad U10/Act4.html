@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reemplazar Palabra en una Frase</title>
+    <script>
+        function reemplazarPalabra() {
+            var frase = document.getElementById("frase").value;
+            var buscar = "ipsum";
+            var reemplazar = "dolor";
+            var resultado = document.getElementById("resultado");
+
+            var nuevaFrase = frase.replace(new RegExp("\\b" + buscar + "\\b", "g"), reemplazar);
+
+            resultado.textContent = "Frase original: " + frase + "\nFrase modificada: " + nuevaFrase;
+        }
+    </script>
+</head>
+<body>
+    <h2>Reemplazar Palabra en una Frase</h2>
+    <label for="frase">Introduce una frase:</label>
+    <input type="text" id="frase" name="frase" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit">
+    <button onclick="reemplazarPalabra()">Reemplazar Palabra</button>
+    <p id="resultado"></p>
+</body>
+</html>

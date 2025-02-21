@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación de Formulario</title>
+    <script>
+        function validarFormulario(event) {
+            event.preventDefault(); // Evita el envío del formulario si hay errores
+            
+            let nombre = document.getElementById("nombre").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let mensaje = document.getElementById("mensaje").value.trim();
+            let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expresión regular para validar email
+            let errorMensaje = "";
+
+            if (nombre === "") {
+                errorMensaje += "El campo 'Nombre' es obligatorio.\n";
+            }
+            if (email === "" || !emailRegex.test(email)) {
+                errorMensaje += "El campo 'Correo Electrónico' es obligatorio y debe tener un formato válido.\n";
+            }
+            if (mensaje === "") {
+                errorMensaje += "El campo 'Mensaje' es obligatorio.\n";
+            }
+
+            if (errorMensaje) {
+                alert(errorMensaje);
+            } else {
+                alert("Formulario enviado correctamente.");
+                document.getElementById("formulario").submit();
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Formulario de Contacto</h1>
+    <form id="formulario" onsubmit="validarFormulario(event)">
+        <div>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+        </div>
+        <div>
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div>
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje"></textarea>
+        </div>
+        <div>
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+</body>
+</html>
